@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   dialect: process.env.DB_DIALECT,
   url: process.env.DB_URL,
