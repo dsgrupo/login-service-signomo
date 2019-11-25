@@ -27,6 +27,10 @@ class User extends Model {
       }
     );
   }
+
+  static associate(models) {
+    this.hasMany(models.Review, { foreignKey: 'user_id', as: 'reviews' });
+  }
 }
 
 module.exports = User;
