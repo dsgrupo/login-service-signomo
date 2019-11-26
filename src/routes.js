@@ -1,6 +1,7 @@
 const express = require('express');
 const AuthController = require('./app/controllers/AuthController');
 const ReviewController = require('./app/controllers/ReviewController');
+const UserController = require('./app/controllers/UserController');
 
 const routes = express.Router();
 
@@ -13,5 +14,7 @@ routes.post('/register', AuthController.register);
 
 routes.get('/users/:user_id/reviews', ReviewController.index);
 routes.post('/users/:user_id/reviews', ReviewController.store);
+
+routes.put('/users/:user_id', UserController.update);
 
 module.exports = routes;
