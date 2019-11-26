@@ -22,6 +22,10 @@ class User extends Model {
             const hash = await bcrypt.hash(user.password, 10);
             user.password = hash;
           },
+          async beforeUpdate(user) {
+            const hash = await bcrypt.hash(user.password, 10);
+            user.password = hash;
+          },
         },
         sequelize,
       }
